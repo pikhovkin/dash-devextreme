@@ -1,0 +1,5 @@
+include dash_devextreme/bundle.js
+include dash_devextreme/bundle.js.map
+include dash_devextreme/metadata.json
+include README.md
+include LICENSE.md
