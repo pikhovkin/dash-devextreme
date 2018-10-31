@@ -1,164 +1,94 @@
 # dash-devextreme
 
-Wrapper of DevExtreme components for Plotly Dash
+dash-devextreme is a Dash component library.
 
-## Dash
+Get started with:
+1. Install Dash and its dependencies: https://dash.plot.ly/installation
+2. Run `python usage.py`
+3. Visit http://localhost:8050 in your web browser
 
-Go to this link to learn about [Dash][].
+## Contributing
 
-## Getting started
+See [CONTRIBUTING.md](./CONTRIBUTING.md)
 
-```sh
-# Install dependencies
-$ npm install
+### Install dependencies
 
-# Watch source for changes and build to `lib/`
-$ npm start
-```
+If you have selected install_dependencies during the prompt, you can skip this part.
 
-## Development
+1. Install npm packages
+    ```
+    $ npm install
+    ```
+2. Create a virtual env and activate.
+    ```
+    $ virtualenv venv
+    $ venv/Scripts/activate
+    ```
+    _Note: venv\Scripts\activate for windows_
 
-### Demo server
+3. Install python packages required to build components.
+    ```
+    $ pip install -r requirements.txt
+    ```
+4. Install the python packages for testing (optional)
+    ```
+    $ pip install -r tests/requirements.txt
+    ```
 
-You can start up a demo development server to see a demo of the rendered
-components:
+### Write your component code in `src/lib/components/dash_devextreme.react.js`. 
 
-```sh
-$ builder run demo
-$ open http://localhost:9000
-```
+- The demo app is in `src/demo` and you will import your example component code into your demo app.
+- Test your code in a Python environment:
+    1. Build your code
+        ```
+        $ npm run build:all
+        ```
+    2. Run and modify the `usage.py` sample dash app:
+        ```
+        $ python usage.py
+        ```
+- Write tests for your component.
+    - A sample test is available in `tests/test_usage.py`, it will load `usage.py` and you can then automate interactions with selenium.
+    - Run the tests with `$ pytest tests`.
+    - The Dash team uses these types of integration tests extensively. Browse the Dash component code on GitHub for more examples of testing (e.g. https://github.com/plotly/dash-core-components)
+- Add custom styles to your component by putting your custom CSS files into your distribution folder (`dash_devextreme`).
+    - Make sure that they are referenced in `MANIFEST.in` so that they get properly included when you're ready to publish your component.
+    - Make sure the stylesheets are added to the `_css_dist` dict in `dash_devextreme/__init__.py` so dash will serve them automatically when the component suite is requested.
+- [Review your code](./review_checklist.md)
 
-You have to maintain the list of components in `demo/Demo.react.js`.
+### Create a production build and publish:
 
-### Code quality and tests
+1. Build your code:
+    ```
+    $ npm run build:all
+    ```
+2. Create a Python tarball
+    ```
+    $ python setup.py sdist
+    ```
+    This distribution tarball will get generated in the `dist/` folder
 
-#### To run lint and unit tests:
+3. Test your tarball by copying it into a new environment and installing it locally:
+    ```
+    $ pip install dash_devextreme-0.0.1.tar.gz
+    ```
 
-```sh
-$ npm test
-```
+4. If it works, then you can publish the component to NPM and PyPI:
+    1. Cleanup the dist folder (optional)
+        ```
+        $ rm -rf dist
+        ```
+    2. Publish on PyPI
+        ```
+        $ twine upload dist/*
+        ```
+    3. Publish on NPM (Optional if chosen False in `publish_on_npm`)
+        ```
+        $ npm publish
+        ```
+        _Publishing your component to NPM will make the JavaScript bundles available on the unpkg CDN. By default, Dash servers the component library's CSS and JS from the remote unpkg CDN, so if you haven't published the component package to NPM you'll need to set the `serve_locally` flags to `True` (unless you choose `False` on `publish_on_npm`). We will eventually make `serve_locally=True` the default, [follow our progress in this issue](https://github.com/plotly/dash/issues/284)._
+5. Share your component with the community! https://community.plot.ly/c/dash
+    1. Publish this repository to GitHub
+    2. Tag your GitHub repository with the plotly-dash tag so that it appears here: https://github.com/topics/plotly-dash
+    3. Create a post in the Dash community forum: https://community.plot.ly/c/dash
 
-#### To run unit tests and watch for changes:
-
-```sh
-$ npm run test-watch
-```
-
-#### To debug unit tests in a browser (Chrome):
-
-```sh
-$ npm run test-debug
-```
-
-1. Wait until Chrome launches.
-2. Click the "DEBUG" button in the top right corner.
-3. Open up Chrome Devtools (`Cmd+opt+i`).
-4. Click the "Sources" tab.
-5. Find source files
-  - Navigate to `webpack:// -> . -> spec/components` to find your test source files.
-  - Navigate to `webpack:// -> [your/repo/path]] -> dash-devextreme -> src` to find your component source files.
-6. Now you can set breakpoints and reload the page to hit them.
-7. The test output is available in the "Console" tab, or in any tab by pressing "Esc".
-
-#### To run a specific test
-
-In your test, append `.only` to a `describe` or `it` statement:
-
-```javascript
-describe.only('Foo component', () => {
-    // ...
-})l
-```
-
-### Testing your components in Dash
-
-1. Build development bundle to `lib/` and watch for changes
-
-        # Once this is started, you can just leave it running.
-        $ npm start
-
-2. Install module locally (after every change)
-
-        # Generate metadata, and build the JavaScript bundle
-        $ npm run install-local
-
-        # Now you're done. For subsequent changes, if you've got `npm start`
-        # running in a separate process, it's enough to just do:
-        $ python setup.py install
-
-3. Run the dash layout you want to test
-
-        # Import dash-devextreme to your layout, then run it:
-        $ python my_dash_layout.py
-
-
-**TODO:** There is a workflow that links your module into `site-packages` which would
-make it unnecessary to re-run `2.` on every change: `python setup.py develop`.
-Unfortunately, this doesn't seem to work with resources defined in
-`package_data`.
-
-See https://github.com/plotly/dash-components-archetype/issues/20
-
-
-## Installing python package locally
-
-Before publishing to PyPi, you can test installing the module locally:
-
-```sh
-# Install in `site-packages` on your machine
-$ npm run install-local
-```
-
-## Uninstalling python package locally
-
-```sh
-$ npm run uninstall-local
-```
-
-## Publishing
-
-For now, multiple steps are necessary for publishing to NPM and PyPi,
-respectively. **TODO:**
-[#5](https://github.com/plotly/dash-components-archetype/issues/5) will roll up
-publishing steps into one workflow.
-
-Ask @chriddyp to get NPM / PyPi package publishing accesss.
-
-1. Preparing to publish to NPM
-
-        # Bump the package version
-        $ npm version major|minor|patch
-
-        # Push branch and tags to repo
-        $ git push --follow-tags
-
-2. Preparing to publish to PyPi
-
-        # Bump the PyPi package to the same version
-        $ vi setup.py
-
-        # Commit to github
-        $ git add setup.py
-        $ git commit -m "Bump pypi package version to vx.x.x"
-
-3. Publish to npm and PyPi
-
-        $ npm run publish-all
-
-## Builder / Archetype
-
-We use [Builder][] to centrally manage build configuration, dependencies, and
-scripts.
-
-To see all `builder` scripts available:
-
-```sh
-$ builder help
-```
-
-See the [dash-components-archetype][] repo for more information.
-
-
-[Builder]: https://github.com/FormidableLabs/builder
-[Dash]: https://github.com/plotly/dash2
-[dash-components-archetype]: https://github.com/plotly/dash-components-archetype

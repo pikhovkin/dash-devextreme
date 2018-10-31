@@ -1,10 +1,13 @@
 import dash_devextreme as ddx
 import dash
+from dash.dependencies import Input, Output
 import dash_html_components as html
 
-app = dash.Dash('')
+
+app = dash.Dash(__name__)
 
 app.scripts.config.serve_locally = True
+app.css.config.serve_locally = True
 
 app.layout = html.Div([
     ddx.TextBox(
@@ -16,8 +19,7 @@ app.layout = html.Div([
 ])
 
 
-@app.callback(dash.dependencies.Output('output', 'children'),
-              [dash.dependencies.Input('input', 'value')])
+@app.callback(Output('output', 'children'), [Input('input', 'value')])
 def display_output(value):
     return 'You have entered {}'.format(value)
 
