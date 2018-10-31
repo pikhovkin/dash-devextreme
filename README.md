@@ -1,6 +1,11 @@
 # dash-devextreme
 
-dash-devextreme is a Dash component library.
+[![PyPI](https://img.shields.io/pypi/v/dash-devextreme.svg)](https://pypi.org/project/dash-devextreme/)
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/dash_devextreme.svg)
+[![NPM](https://img.shields.io/npm/v/dash-devextreme.svg)](https://www.npmjs.com/package/dash-devextreme)
+[![PyPI - License](https://img.shields.io/pypi/l/dash-devextreme.svg)](./LICENSE)
+
+Wrapper of DevExtreme components for Plotly Dash
 
 Get started with:
 1. Install Dash and its dependencies: https://dash.plot.ly/installation
