@@ -1,4 +1,61 @@
 {
+  "src/lib/components/DataGrid.react.js": {
+    "description": "",
+    "displayName": "DataGrid",
+    "methods": [],
+    "props": {
+      "id": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": ""
+      },
+      "dataSource": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": ""
+      },
+      "columns": {
+        "type": {
+          "name": "arrayOf",
+          "value": {
+            "name": "custom",
+            "raw": "PropTypes.shape"
+          }
+        },
+        "required": false,
+        "description": ""
+      },
+      "columnAutoWidth": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "true",
+          "computed": false
+        }
+      },
+      "grouping": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": ""
+      },
+      "setProps": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": ""
+      }
+    }
+  },
   "src/lib/components/PivotGrid.react.js": {
     "description": "",
     "displayName": "PivotGrid",
