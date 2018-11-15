@@ -2,7 +2,56 @@
   "src/lib/components/DataGrid.react.js": {
     "description": "",
     "displayName": "DataGrid",
-    "methods": [],
+    "methods": [
+      {
+        "name": "rowTemplate",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "template_id",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "cellTemplate",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "template_id",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "headerCellTemplate",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "template_id",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "_processCellTemplate",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "columns",
+            "type": null
+          }
+        ],
+        "returns": null
+      }
+    ],
     "props": {
       "id": {
         "type": {
@@ -43,6 +92,13 @@
       "grouping": {
         "type": {
           "name": "object"
+        },
+        "required": false,
+        "description": ""
+      },
+      "rowTemplate": {
+        "type": {
+          "name": "string"
         },
         "required": false,
         "description": ""

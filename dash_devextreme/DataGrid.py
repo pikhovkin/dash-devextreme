@@ -13,16 +13,17 @@ Keyword arguments:
 - columns (list; optional)
 - columnAutoWidth (boolean; optional)
 - grouping (dict; optional)
+- rowTemplate (string; optional)
 
 Available events: """
     @_explicitize_args
-    def __init__(self, id=Component.UNDEFINED, dataSource=Component.UNDEFINED, columns=Component.UNDEFINED, columnAutoWidth=Component.UNDEFINED, grouping=Component.UNDEFINED, **kwargs):
-        self._prop_names = ['id', 'dataSource', 'columns', 'columnAutoWidth', 'grouping']
+    def __init__(self, id=Component.UNDEFINED, dataSource=Component.UNDEFINED, columns=Component.UNDEFINED, columnAutoWidth=Component.UNDEFINED, grouping=Component.UNDEFINED, rowTemplate=Component.UNDEFINED, **kwargs):
+        self._prop_names = ['id', 'dataSource', 'columns', 'columnAutoWidth', 'grouping', 'rowTemplate']
         self._type = 'DataGrid'
         self._namespace = 'dash_devextreme'
         self._valid_wildcard_attributes =            []
         self.available_events = []
-        self.available_properties = ['id', 'dataSource', 'columns', 'columnAutoWidth', 'grouping']
+        self.available_properties = ['id', 'dataSource', 'columns', 'columnAutoWidth', 'grouping', 'rowTemplate']
         self.available_wildcard_properties =            []
 
         _explicit_args = kwargs.pop('_explicit_args')
