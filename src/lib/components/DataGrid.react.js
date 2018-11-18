@@ -56,7 +56,7 @@ export default class DataGrid extends Component {
         const {id, dataSource, setProps, columns} = this.props;
         let {rowTemplate} = this.props;
 
-         this._processCellTemplate(columns);
+        this._processCellTemplate(columns);
 
         if (rowTemplate && typeof rowTemplate === 'string'){
             rowTemplate = this.rowTemplate(rowTemplate);

@@ -326,5 +326,298 @@
         "description": "Dash-assigned callback that should be called whenever any of the\nproperties change"
       }
     }
+  },
+  "src/lib/components/TreeList.react.js": {
+    "description": "",
+    "displayName": "TreeList",
+    "methods": [
+      {
+        "name": "cellTemplate",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "template_id",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "headerCellTemplate",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "template_id",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "_processCellTemplate",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "columns",
+            "type": null
+          }
+        ],
+        "returns": null
+      }
+    ],
+    "props": {
+      "id": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": ""
+      },
+      "dataSource": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": ""
+      },
+      "columns": {
+        "type": {
+          "name": "arrayOf",
+          "value": {
+            "name": "custom",
+            "raw": "PropTypes.shape"
+          }
+        },
+        "required": false,
+        "description": ""
+      },
+      "keyExpr": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": ""
+      },
+      "parentIdExpr": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": ""
+      },
+      "showColumnHeaders": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": ""
+      },
+      "showColumnLines": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": ""
+      },
+      "showRowLines": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": ""
+      },
+      "showBorders": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": ""
+      },
+      "columnWidth": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": ""
+      },
+      "columnMinWidth": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": ""
+      },
+      "columnAutoWidth": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "true",
+          "computed": false
+        }
+      },
+      "allowColumnResizing": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "disabled": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "columnResizingMode": {
+        "type": {
+          "name": "enum",
+          "value": [
+            {
+              "value": "'nextColumn'",
+              "computed": false
+            },
+            {
+              "value": "'widget'",
+              "computed": false
+            }
+          ]
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "'nextColumn'",
+          "computed": false
+        }
+      },
+      "dataStructure": {
+        "type": {
+          "name": "enum",
+          "value": [
+            {
+              "value": "'plain'",
+              "computed": false
+            },
+            {
+              "value": "'tree'",
+              "computed": false
+            }
+          ]
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "'plain'",
+          "computed": false
+        }
+      },
+      "scrolling": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": ""
+      },
+      "paging": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": ""
+      },
+      "pager": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": ""
+      },
+      "sorting": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": ""
+      },
+      "height": {
+        "type": {
+          "name": "union",
+          "value": [
+            {
+              "name": "string"
+            },
+            {
+              "name": "number"
+            },
+            {
+              "name": "func"
+            }
+          ]
+        },
+        "required": false,
+        "description": ""
+      },
+      "width": {
+        "type": {
+          "name": "union",
+          "value": [
+            {
+              "name": "string"
+            },
+            {
+              "name": "number"
+            },
+            {
+              "name": "func"
+            }
+          ]
+        },
+        "required": false,
+        "description": ""
+      },
+      "visible": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "true",
+          "computed": false
+        }
+      },
+      "wordWrapEnabled": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "setProps": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": ""
+      }
+    }
   }
 }

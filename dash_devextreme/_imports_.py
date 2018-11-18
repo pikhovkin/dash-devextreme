@@ -3,6 +3,7 @@ from .PivotGrid import PivotGrid
 from .Popup import Popup
 from .SelectBox import SelectBox
 from .TextBox import TextBox
+from .TreeList import TreeList
 
 
 __all__ = [
@@ -11,4 +12,5 @@ __all__ = [
     "Popup",
     "SelectBox",
     "TextBox",
+    "TreeList",
 ]
