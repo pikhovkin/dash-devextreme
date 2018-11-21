@@ -13,7 +13,11 @@ data = [
     dict(id=5, parent_id=4, dept='Developers N', director='Elly'),
 ]
 columns = [
-    dict(caption='Department', dataField='dept', cellTemplate='dept'),
+    dict(caption='Department', dataField='dept', cellTemplate='dept_tree'),
+    dict(caption='Director', dataField='director'),
+]
+columns_table = [
+    dict(caption='Department', dataField='dept', cellTemplate='dept_table'),
     dict(caption='Director', dataField='director'),
 ]
 
@@ -37,9 +41,17 @@ _default_index = '''<!DOCTYPE html>
             
             {%scripts%}
             
+            <script>
+                window.Tooltip = dash_devextreme.Tooltip;
+            </script>
+            
             <script type="text/jsx" data-presets="react">
-                function dept(props){
-                    return <b>{props.value}</b>
+                function dept_tree(props){
+                    return <div><b id={"status_tree_" + props.data.id}>{props.value}</b><Tooltip showEvent="dxhoverstart" hideEvent="dxhoverend" target={"status_tree_" + props.data.id}><div><b>{props.data.dept}</b>:&nbsp;{props.data.director}</div></Tooltip></div>
+                }
+                
+                function dept_table(props){
+                    return <div><b id={"status_table_" + props.data.id}>{props.value}</b><Tooltip showEvent="dxhoverstart" hideEvent="dxhoverend" target={"status_table_" + props.data.id}><div><b>{props.data.dept}</b><br/>{props.data.director}</div></Tooltip></div>
                 }
             </script>
         </footer>
@@ -59,7 +71,7 @@ app.layout = html.Div([
     ),
     html.Div(id='output'),
     ddx.TreeList(dataSource=data, columns=columns, keyExpr='id', parentIdExpr='parent_id'),
-    ddx.DataGrid(dataSource=data, columns=columns),
+    ddx.DataGrid(dataSource=data, columns=columns_table),
 ])
 
 @app.callback(Output('output', 'children'), [Input('input', 'value')])

@@ -8,7 +8,7 @@ export default class Popup extends Component {
     constructor(props) {
         super(props);
 
-        this.state = {visible: this.props.visible, value: this.props.value};
+        this.state = {visible: this.props.visible};
 
         this.closeOnOutsideClick = this.closeOnOutsideClick.bind(this);
     }
@@ -21,7 +21,6 @@ export default class Popup extends Component {
 
     render() {
         return <DXPopup
-            value={this.state.value}
             showTitle={this.props.showTitle}
             title={this.props.title}
             visible={this.state.visible}
@@ -37,11 +36,6 @@ Popup.propTypes = {
      * The ID used to identify this compnent in Dash callbacks
      */
     id: PropTypes.string,
-
-    /**
-     * The value displayed in the input
-     */
-    value: PropTypes.string,
 
     showTitle: PropTypes.bool,
     title: PropTypes.string,

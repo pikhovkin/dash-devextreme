@@ -5,6 +5,7 @@ import SelectBox from './components/SelectBox.react';
 import TextBox from './components/TextBox.react';
 import Popup from './components/Popup.react';
 import TreeList from './components/TreeList.react';
+import Tooltip from './components/Tooltip.react';
 
 export {
     DataGrid,
@@ -12,5 +13,6 @@ export {
     SelectBox,
     TextBox,
     Popup,
-    TreeList
+    TreeList,
+    Tooltip
 };
