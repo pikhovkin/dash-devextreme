@@ -71,7 +71,7 @@ Tooltip.propTypes = {
     onOptionChanged: PropTypes.func,
     onShowing: PropTypes.func,
     onShown: PropTypes.func,
-    position: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+    position: PropTypes.oneOfType([PropTypes.oneOf(['bottom', 'left', 'right', 'top']), PropTypes.object]),
     rtlEnabled: PropTypes.bool,
     shading: PropTypes.bool,
     shadingColor: PropTypes.string,

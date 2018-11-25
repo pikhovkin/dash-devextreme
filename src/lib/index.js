@@ -6,6 +6,7 @@ import TextBox from './components/TextBox.react';
 import Popup from './components/Popup.react';
 import TreeList from './components/TreeList.react';
 import Tooltip from './components/Tooltip.react';
+import Popover from './components/Popover.react';
 
 export {
     DataGrid,
@@ -14,5 +15,6 @@ export {
     TextBox,
     Popup,
     TreeList,
-    Tooltip
+    Tooltip,
+    Popover
 };

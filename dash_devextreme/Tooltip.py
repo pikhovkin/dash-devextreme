@@ -24,7 +24,7 @@ Keyword arguments:
 - maxWidth (number | string; optional)
 - minHeight (number | string; optional)
 - minWidth (number | string; optional)
-- position (string | dict; optional)
+- position (a value equal to: 'bottom', 'left', 'right', 'top' | dict; optional)
 - rtlEnabled (boolean; optional)
 - shading (boolean; optional)
 - shadingColor (string; optional)
