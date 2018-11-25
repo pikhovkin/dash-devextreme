@@ -9,7 +9,6 @@ class Popup(Component):
 
 Keyword arguments:
 - id (string; optional): The ID used to identify this compnent in Dash callbacks
-- value (string; optional): The value displayed in the input
 - showTitle (boolean; optional)
 - title (string; optional)
 - visible (boolean; optional)
@@ -19,13 +18,13 @@ Keyword arguments:
 
 Available events: """
     @_explicitize_args
-    def __init__(self, id=Component.UNDEFINED, value=Component.UNDEFINED, showTitle=Component.UNDEFINED, title=Component.UNDEFINED, visible=Component.UNDEFINED, dragEnabled=Component.UNDEFINED, closeOnOutsideClick=Component.UNDEFINED, closeOnBackButton=Component.UNDEFINED, **kwargs):
-        self._prop_names = ['id', 'value', 'showTitle', 'title', 'visible', 'dragEnabled', 'closeOnOutsideClick', 'closeOnBackButton']
+    def __init__(self, id=Component.UNDEFINED, showTitle=Component.UNDEFINED, title=Component.UNDEFINED, visible=Component.UNDEFINED, dragEnabled=Component.UNDEFINED, closeOnOutsideClick=Component.UNDEFINED, closeOnBackButton=Component.UNDEFINED, **kwargs):
+        self._prop_names = ['id', 'showTitle', 'title', 'visible', 'dragEnabled', 'closeOnOutsideClick', 'closeOnBackButton']
         self._type = 'Popup'
         self._namespace = 'dash_devextreme'
         self._valid_wildcard_attributes =            []
         self.available_events = []
-        self.available_properties = ['id', 'value', 'showTitle', 'title', 'visible', 'dragEnabled', 'closeOnOutsideClick', 'closeOnBackButton']
+        self.available_properties = ['id', 'showTitle', 'title', 'visible', 'dragEnabled', 'closeOnOutsideClick', 'closeOnBackButton']
         self.available_wildcard_properties =            []
 
         _explicit_args = kwargs.pop('_explicit_args')

@@ -415,11 +415,7 @@
           "name": "string"
         },
         "required": false,
-        "description": "",
-        "defaultValue": {
-          "value": "undefined",
-          "computed": true
-        }
+        "description": ""
       },
       "deferRendering": {
         "type": {
@@ -489,22 +485,14 @@
           ]
         },
         "required": false,
-        "description": "",
-        "defaultValue": {
-          "value": "undefined",
-          "computed": true
-        }
+        "description": ""
       },
       "hint": {
         "type": {
           "name": "string"
         },
         "required": false,
-        "description": "",
-        "defaultValue": {
-          "value": "undefined",
-          "computed": true
-        }
+        "description": ""
       },
       "hoverStateEnabled": {
         "type": {
@@ -758,11 +746,7 @@
           ]
         },
         "required": false,
-        "description": "",
-        "defaultValue": {
-          "value": "undefined",
-          "computed": true
-        }
+        "description": ""
       },
       "target": {
         "type": {
