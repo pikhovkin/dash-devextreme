@@ -1,6 +1,6 @@
 {
     "name": "dash-devextreme",
-    "version": "0.5.0",
+    "version": "0.6.0",
     "description": "Wrapper of DevExtreme components for Plotly Dash",
     "main": "build/index.js",
     "repository": {
