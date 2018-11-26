@@ -44,6 +44,7 @@ _default_index = '''<!DOCTYPE html>
             <script>
                 window.Tooltip = dash_devextreme.Tooltip;
                 window.Popover = dash_devextreme.Popover;
+                window.TabPanel = dash_devextreme.TabPanel;
             </script>
             
             <script type="text/jsx" data-presets="react">
@@ -54,11 +55,26 @@ _default_index = '''<!DOCTYPE html>
                 function dept_table(props){
                     return <div><b id={"status_table_" + props.data.id}>{props.value}</b><Popover showEvent="dxhoverstart" hideEvent="dxhoverend" target={"status_table_" + props.data.id} showTitle={true} title={props.data.dept} width={200}><div>{props.data.director}</div></Popover></div>
                 }
+                
+                function tp_title(props){
+                    return <b>{props.dept}</b>
+                }
+                
+                function tp_sub_panel(props){
+                    return <span>Director: <b>{props.director}</b></span>
+                }
+                
+                function tp_panel(props){
+                    return <div>
+                        <div>{props.director}</div>
+                        <TabPanel items={[props]} itemTitleTemplate="tp_title" itemTemplate="tp_sub_panel" />
+                    </div>
+                }
             </script>
         </footer>
     </body>
 </html>'''
-
+#
 
 app = dash.Dash(__name__, index_string=_default_index)
 app.scripts.config.serve_locally = True
@@ -73,6 +89,7 @@ app.layout = html.Div([
     html.Div(id='output'),
     ddx.TreeList(dataSource=data, columns=columns, keyExpr='id', parentIdExpr='parent_id'),
     ddx.DataGrid(dataSource=data, columns=columns_table),
+    ddx.TabPanel(items=data, itemTitleTemplate='tp_title', itemTemplate='tp_panel')
 ])
 
 @app.callback(Output('output', 'children'), [Input('input', 'value')])
