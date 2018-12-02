@@ -1,6 +1,6 @@
 {
     "name": "dash-devextreme",
-    "version": "0.9.0",
+    "version": "0.10.0",
     "description": "Wrapper of DevExtreme components for Plotly Dash",
     "main": "build/index.js",
     "repository": {
@@ -31,11 +31,11 @@
         "publish-pypi": "npm run prepublish && python setup.py sdist upload"
     },
     "dependencies": {
-        "devextreme": "^18.1.6",
-        "devextreme-react": "^18.1.7-alpha.12",
+        "devextreme": "^18.2.3",
+        "devextreme-react": "^18.2.3",
         "ramda": "^0.25.0",
-        "react": "15.4.2",
-        "react-dom": "15.4.2"
+        "react": "16.3.0",
+        "react-dom": "16.3.0"
     },
     "devDependencies": {
         "babel-core": "^6.26.3",

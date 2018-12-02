@@ -1,4 +1,5 @@
 from .DataGrid import DataGrid
+from .PieChart import PieChart
 from .PivotGrid import PivotGrid
 from .Popover import Popover
 from .Popup import Popup
@@ -12,6 +13,7 @@ from .TreeList import TreeList
 
 __all__ = [
     "DataGrid",
+    "PieChart",
     "PivotGrid",
     "Popover",
     "Popup",

@@ -1,5 +1,6 @@
 /* eslint-disable import/prefer-default-export */
 import DataGrid from './components/DataGrid.react';
+import PieChart from './components/PieChart.react';
 import PivotGrid from './components/PivotGrid.react';
 import Popover from './components/Popover.react';
 import Popup from './components/Popup.react';
@@ -12,6 +13,7 @@ import TreeList from './components/TreeList.react';
 
 export {
     DataGrid,
+    PieChart,
     PivotGrid,
     Popover,
     Popup,

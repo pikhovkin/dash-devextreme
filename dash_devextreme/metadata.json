@@ -1212,6 +1212,799 @@
       }
     }
   },
+  "src/lib/components/PieChart.react.js": {
+    "description": "",
+    "displayName": "PieChart",
+    "methods": [
+      {
+        "name": "customizeText",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "template_id",
+            "type": null
+          }
+        ],
+        "returns": null
+      }
+    ],
+    "props": {
+      "id": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "The ID used to identify this compnent in Dash callbacks"
+      },
+      "adaptiveLayout": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "animation": {
+        "type": {
+          "name": "union",
+          "value": [
+            {
+              "name": "object"
+            },
+            {
+              "name": "bool"
+            }
+          ]
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "commonSeriesSettings": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "customizeLabel": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "customizePoint": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "dataSource": {
+        "type": {
+          "name": "union",
+          "value": [
+            {
+              "name": "arrayOf",
+              "value": {
+                "name": "any"
+              }
+            },
+            {
+              "name": "object"
+            },
+            {
+              "name": "string"
+            }
+          ]
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "diameter": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": ""
+      },
+      "disabled": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "elementAttr": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "export": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "innerRadius": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "0.5",
+          "computed": false
+        }
+      },
+      "legend": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "loadingIndicator": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "margin": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "minDiameter": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "0.5",
+          "computed": false
+        }
+      },
+      "onDisposing": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "onDone": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "onDrawn": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "onExported": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "onExporting": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "onFileSaving": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "onIncidentOccurred": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "onInitialized": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "onLegendClick": {
+        "type": {
+          "name": "union",
+          "value": [
+            {
+              "name": "func"
+            },
+            {
+              "name": "string"
+            }
+          ]
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "onOptionChanged": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "onPointClick": {
+        "type": {
+          "name": "union",
+          "value": [
+            {
+              "name": "func"
+            },
+            {
+              "name": "string"
+            }
+          ]
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "onPointHoverChanged": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "onPointSelectionChanged": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "onTooltipHidden": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "onTooltipShown": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "palette": {
+        "type": {
+          "name": "union",
+          "value": [
+            {
+              "name": "arrayOf",
+              "value": {
+                "name": "string"
+              }
+            },
+            {
+              "name": "enum",
+              "value": [
+                {
+                  "value": "'Bright'",
+                  "computed": false
+                },
+                {
+                  "value": "'Harmony Light'",
+                  "computed": false
+                },
+                {
+                  "value": "'Ocean'",
+                  "computed": false
+                },
+                {
+                  "value": "'Pastel'",
+                  "computed": false
+                },
+                {
+                  "value": "'Soft'",
+                  "computed": false
+                },
+                {
+                  "value": "'Soft Pastel'",
+                  "computed": false
+                },
+                {
+                  "value": "'Vintage'",
+                  "computed": false
+                },
+                {
+                  "value": "'Violet'",
+                  "computed": false
+                },
+                {
+                  "value": "'Carmine'",
+                  "computed": false
+                },
+                {
+                  "value": "'Dark Moon'",
+                  "computed": false
+                },
+                {
+                  "value": "'Dark Violet'",
+                  "computed": false
+                },
+                {
+                  "value": "'Green Mist'",
+                  "computed": false
+                },
+                {
+                  "value": "'Soft Blue'",
+                  "computed": false
+                },
+                {
+                  "value": "'Material'",
+                  "computed": false
+                },
+                {
+                  "value": "'Office'",
+                  "computed": false
+                }
+              ]
+            }
+          ]
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "'Material'",
+          "computed": false
+        }
+      },
+      "paletteExtensionMode": {
+        "type": {
+          "name": "enum",
+          "value": [
+            {
+              "value": "'alternate'",
+              "computed": false
+            },
+            {
+              "value": "'blend'",
+              "computed": false
+            },
+            {
+              "value": "'extrapolate'",
+              "computed": false
+            }
+          ]
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "'blend'",
+          "computed": false
+        }
+      },
+      "pathModified": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "pointSelectionMode": {
+        "type": {
+          "name": "enum",
+          "value": [
+            {
+              "value": "'multiple'",
+              "computed": false
+            },
+            {
+              "value": "'single'",
+              "computed": false
+            }
+          ]
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "'single'",
+          "computed": false
+        }
+      },
+      "redrawOnResize": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "true",
+          "computed": false
+        }
+      },
+      "resolveLabelOverlapping": {
+        "type": {
+          "name": "enum",
+          "value": [
+            {
+              "value": "'hide'",
+              "computed": false
+            },
+            {
+              "value": "'none'",
+              "computed": false
+            },
+            {
+              "value": "'shift'",
+              "computed": false
+            }
+          ]
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "'none'",
+          "computed": false
+        }
+      },
+      "rtlEnabled": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "segmentsDirection": {
+        "type": {
+          "name": "enum",
+          "value": [
+            {
+              "value": "'anticlockwise'",
+              "computed": false
+            },
+            {
+              "value": "'clockwise'",
+              "computed": false
+            }
+          ]
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "'clockwise'",
+          "computed": false
+        }
+      },
+      "series": {
+        "type": {
+          "name": "union",
+          "value": [
+            {
+              "name": "object"
+            },
+            {
+              "name": "arrayOf",
+              "value": {
+                "name": "object"
+              }
+            }
+          ]
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "[]",
+          "computed": false
+        }
+      },
+      "seriesTemplate": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "size": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "sizeGroup": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": ""
+      },
+      "startAngle": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "0",
+          "computed": false
+        }
+      },
+      "theme": {
+        "type": {
+          "name": "enum",
+          "value": [
+            {
+              "value": "'generic.dark'",
+              "computed": false
+            },
+            {
+              "value": "'generic.light'",
+              "computed": false
+            },
+            {
+              "value": "'generic.contrast'",
+              "computed": false
+            },
+            {
+              "value": "'ios7.default'",
+              "computed": false
+            },
+            {
+              "value": "'generic.carmine'",
+              "computed": false
+            },
+            {
+              "value": "'generic.darkmoon'",
+              "computed": false
+            },
+            {
+              "value": "'generic.darkviolet'",
+              "computed": false
+            },
+            {
+              "value": "'generic.greenmist'",
+              "computed": false
+            },
+            {
+              "value": "'generic.softblue'",
+              "computed": false
+            },
+            {
+              "value": "'material.blue.light'",
+              "computed": false
+            },
+            {
+              "value": "'material.lime.light'",
+              "computed": false
+            },
+            {
+              "value": "'material.orange.light'",
+              "computed": false
+            },
+            {
+              "value": "'material.purple.light'",
+              "computed": false
+            },
+            {
+              "value": "'material.teal.light'",
+              "computed": false
+            }
+          ]
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "'generic.light'",
+          "computed": false
+        }
+      },
+      "title": {
+        "type": {
+          "name": "union",
+          "value": [
+            {
+              "name": "object"
+            },
+            {
+              "name": "string"
+            }
+          ]
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "tooltip": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "type": {
+        "type": {
+          "name": "enum",
+          "value": [
+            {
+              "value": "'donut'",
+              "computed": false
+            },
+            {
+              "value": "'doughnut'",
+              "computed": false
+            },
+            {
+              "value": "'pie'",
+              "computed": false
+            }
+          ]
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "'pie'",
+          "computed": false
+        }
+      },
+      "setProps": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": ""
+      }
+    }
+  },
   "src/lib/components/PivotGrid.react.js": {
     "description": "",
     "displayName": "PivotGrid",
