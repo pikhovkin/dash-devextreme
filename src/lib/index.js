@@ -5,6 +5,7 @@ import Popover from './components/Popover.react';
 import Popup from './components/Popup.react';
 import SelectBox from './components/SelectBox.react';
 import TabPanel from './components/TabPanel.react';
+import Tabs from './components/Tabs.react';
 import TextBox from './components/TextBox.react';
 import Tooltip from './components/Tooltip.react';
 import TreeList from './components/TreeList.react';
@@ -16,6 +17,7 @@ export {
     Popup,
     SelectBox,
     TabPanel,
+    Tabs,
     TextBox,
     Tooltip,
     TreeList
