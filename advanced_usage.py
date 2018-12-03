@@ -34,6 +34,19 @@ pieDataSource = [
     {'language': 'Polish', 'percent': 1.8}
 ]
 
+pieExportImportDataSource = [
+    {'Country': 'Brazil', 'Export': 243, 'Import': 233},
+    {'Country': 'Russia', 'Export': 529, 'Import': 335},
+    {'Country': 'India','Export': 293,'Import': 489},
+    {'Country': 'China', 'Export': 2049, 'Import': 1818},
+    {'Country': 'Japan', 'Export': 799, 'Import': 886},
+    {'Country': 'USA', 'Export': 1547, 'Import': 2335},
+    {'Country': 'Canada', 'Export': 455, 'Import': 475},
+    {'Country': 'France', 'Export': 569, 'Import': 674},
+    {'Country': 'England', 'Export': 468, 'Import': 680},
+    {'Country': 'Germany', 'Export': 1407, 'Import': 1167}
+]
+
 _default_index = '''<!DOCTYPE html>
 <html>
     <head>
@@ -84,13 +97,17 @@ _default_index = '''<!DOCTYPE html>
                 }
                 
                 function pie_chart(point) {
-                    return `${point.argumentText}: ${point.valueText}%`;
+                    return `${point.argumentText}: ${point.valueText}`;
+                }
+                
+                function doughnut_chart(point) {
+                    return `${point.argumentText} (${point.seriesName}): ${point.valueText}B (${point.percentText})`;
                 }
             </script>
         </footer>
     </body>
 </html>'''
-#
+
 
 app = dash.Dash(__name__, index_string=_default_index)
 app.scripts.config.serve_locally = True
@@ -107,12 +124,12 @@ app.layout = html.Div([
     ddx.DataGrid(dataSource=data, columns=columns_table),
     ddx.TabPanel(items=data, itemTitleTemplate='tp_title', itemTemplate='tp_panel'),
     ddx.PieChart(
-        type='doughnut',
+        type='pie',
         palette='Soft Pastel',
         title='Top Internet Languages',
         dataSource=pieDataSource,
         legend=dict(horizontalAlignment='center', verticalAlignment='bottom'),
-        export=dict(enabled=True),
+        # export=dict(enabled=True),
         series=dict(
             smallValuesGrouping=dict(mode='topN', topCount=3),
             argumentField='language',
@@ -124,6 +141,40 @@ app.layout = html.Div([
                 connector=dict(visible=True, width=1)
             )
         )
+    ),
+    ddx.PieChart(
+        type='doughnut',
+        palette='Soft Pastel',
+        title='Top Internet Languages',
+        dataSource=pieExportImportDataSource,
+        legend=dict(horizontalAlignment='center', verticalAlignment='bottom'),
+        # export=dict(enabled=True),
+        series=[
+            dict(
+                name='Export',
+                smallValuesGrouping=dict(mode='topN', topCount=3),
+                argumentField='Country',
+                valueField='Export',
+                label=dict(
+                    visible=True,
+                    format='fixedPoint',
+                    customizeText='doughnut_chart',
+                    connector=dict(visible=True, width=1)
+                )
+            ),
+            dict(
+                name='Import',
+                smallValuesGrouping=dict(mode='topN', topCount=3),
+                argumentField='Country',
+                valueField='Import',
+                label=dict(
+                    visible=True,
+                    format='fixedPoint',
+                    customizeText='doughnut_chart',
+                    connector=dict(visible=True, width=1)
+                )
+            )
+        ]
     )
 ])
 

@@ -40,14 +40,14 @@ app.layout = html.Div([
         title='Top Internet Languages',
         dataSource=dataSource,
         legend=dict(horizontalAlignment='center', verticalAlignment='bottom'),
-        export=dict(enabled=True),
+        # export=dict(enabled=True),
         series=dict(
             smallValuesGrouping=dict(mode='topN', topCount=3),
             argumentField='language',
             valueField='percent',
             label=dict(
                 visible=True,
-                customizeText='argumentText',
+                customizeText='valueText',
                 format='fixedPoint',
                 connector=dict(visible=True, width=1)
             )

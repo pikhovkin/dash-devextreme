@@ -1222,7 +1222,7 @@
         "modifiers": [],
         "params": [
           {
-            "name": "template_id",
+            "name": "series",
             "type": null
           }
         ],
@@ -1837,11 +1837,7 @@
           "name": "object"
         },
         "required": false,
-        "description": "",
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
+        "description": ""
       },
       "size": {
         "type": {

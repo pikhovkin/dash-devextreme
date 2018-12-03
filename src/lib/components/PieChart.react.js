@@ -11,26 +11,28 @@ export default class PieChart extends Component {
         this.customizeText = this.customizeText.bind(this);
     }
 
-    customizeText(template_id) {
-        return window[template_id];
+    customizeText(series) {
+        if (typeof series === 'object' && series.label && series.label.customizeText) {
+            if (window[series.label.customizeText]) {
+                series.label.customizeText = window[series.label.customizeText];
+            }
+        }
     }
 
     render() {
         const {series} = this.props;
-        if (series && typeof series === 'object' && series.label && series.label.customizeText) {
-            series.label.customizeText = this.customizeText(series.label.customizeText)
+        if (series) {
+            if (Array.isArray(series)) {
+                for(let i=0; i < series.length; i++) {
+                    this.customizeText(series[i]);
+                }
+            } else {
+                this.customizeText(series);
+            }
         }
 
         return (
-            <DXPieChart
-                id={this.props.id}
-                type={this.props.type}
-                title={this.props.title}
-                palette={this.props.palette}
-                dataSource={this.props.dataSource}
-                series={series}
-                legend={this.props.legend}
-            />
+            <DXPieChart {...this.props}/>
         )
     }
 }
@@ -132,7 +134,7 @@ PieChart.defaultProps = {
     rtlEnabled: false,
     segmentsDirection: 'clockwise',
     series: [],
-    seriesTemplate: {},
+    // seriesTemplate: undefined,
     size: {},
     // sizeGroup: undefined,
     startAngle: 0,
