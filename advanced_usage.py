@@ -144,10 +144,18 @@ app.layout = html.Div([
     ),
     ddx.PieChart(
         type='doughnut',
-        palette='Soft Pastel',
-        title='Top Internet Languages',
+        palette='ocean',
+        title=dict(
+            text='Imports/Exports of Goods and Services',
+            subtitle=dict(
+                text='(billion US$, 2012)'
+            )
+        ),
         dataSource=pieExportImportDataSource,
-        legend=dict(horizontalAlignment='center', verticalAlignment='bottom'),
+        legend=dict(visible=True),
+        commonSeriesSettings=dict(
+            label=dict(visible=False)
+        ),
         # export=dict(enabled=True),
         series=[
             dict(
