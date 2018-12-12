@@ -44,8 +44,14 @@ TextBox.propTypes = {
     valueChangeEvent: PropTypes.string,
 
     /**
-     * Dash-assigned callback that should be called whenever any of the
-     * properties change
+     * Dash-assigned callback that gets fired when the checkbox item gets selected.
      */
-    setProps: PropTypes.func
+    fireEvent: PropTypes.func,
+
+    /**
+     * Dash-assigned callback that gets fired when the value changes.
+     */
+    setProps: PropTypes.func,
+
+    dashEvents: PropTypes.oneOf(['change']),
 };

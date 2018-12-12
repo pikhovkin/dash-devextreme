@@ -24,7 +24,7 @@ export default class SelectBox extends Component {
             });
         }
         this.setState({value: e.value});
-        if (fireEvent) fireEvent('change');
+        if (fireEvent) fireEvent({event: 'change'});
     }
 
     render() {
@@ -36,7 +36,7 @@ export default class SelectBox extends Component {
                 dataSource={dataSource}
                 value={this.state.value}
                 onValueChanged={this.onValueChanged}
-              {...R.omit(['value', 'setProps', 'fireEvent'], this.props)}
+                {...R.omit(['value', 'setProps', 'fireEvent'], this.props)}
             />
         );
     }
@@ -47,8 +47,15 @@ SelectBox.propTypes = {
     dataSource: PropTypes.object,
     value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 
-    // Dash supplied props
+    /**
+     * Dash-assigned callback that gets fired when the checkbox item gets selected.
+     */
+    fireEvent: PropTypes.func,
+
+    /**
+     * Dash-assigned callback that gets fired when the value changes.
+     */
     setProps: PropTypes.func,
 
-    dashEvents: PropTypes.oneOf(['change'])
+    dashEvents: PropTypes.oneOf(['change']),
 };

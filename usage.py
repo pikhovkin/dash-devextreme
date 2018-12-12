@@ -52,8 +52,18 @@ app.layout = html.Div([
                 connector=dict(visible=True, width=1)
             )
         )
-    )
+    ),
+    html.Div(['Checked', ddx.CheckBox(id='CheckedOn', value=True)]),
+    html.Div(['Unchecked', ddx.CheckBox(id='CheckedOff', value=False)]),
+    # html.Div(['Indeterminate', ddx.CheckBox(value=None)]),
+    html.Div(['Disabled', ddx.CheckBox(value=True, disabled=True)]),
+    html.Div(ddx.CheckBox(text='Check', value=True, width=80)),
+    html.Div(['Switched on', ddx.Switch(id='SwitchedOn', value=False)]),
+    html.Div(['Switched off', ddx.Switch(value=False)]),
+    # html.Div(['Value change handling', ddx.Switch(id='handlerSwitch', value=False)]),
+    html.Div(['Disabled', ddx.Switch(id='disabledSwitch', value=False, disabled=True)]),
 ])
+
 
 @app.callback(Output('output', 'children'), [Input('input', 'value')])
 def display_output(value):

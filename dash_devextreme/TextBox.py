@@ -12,14 +12,14 @@ Keyword arguments:
 - value (string; optional): The value displayed in the input
 - valueChangeEvent (string; optional)
 
-Available events: """
+Available events: 'change'"""
     @_explicitize_args
     def __init__(self, id=Component.UNDEFINED, value=Component.UNDEFINED, valueChangeEvent=Component.UNDEFINED, **kwargs):
         self._prop_names = ['id', 'value', 'valueChangeEvent']
         self._type = 'TextBox'
         self._namespace = 'dash_devextreme'
         self._valid_wildcard_attributes =            []
-        self.available_events = []
+        self.available_events = ['change']
         self.available_properties = ['id', 'value', 'valueChangeEvent']
         self.available_wildcard_properties =            []
 
