@@ -31,7 +31,8 @@ app.layout = html.Div([
     ddx.TextBox(
         id='input',
         value='my-value',
-        valueChangeEvent='input'
+        valueChangeEvent='input',
+        stylingMode='underlined'
     ),
     html.Div(id='output'),
     ddx.PieChart(
