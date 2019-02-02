@@ -35,7 +35,7 @@
         "devextreme-react": "^18.2.3",
         "ramda": "^0.26.1",
         "react": "16.3.0",
-        "react-dom": "16.3.0"
+        "react-dom": "16.3.3"
     },
     "devDependencies": {
         "babel-core": "^6.26.3",
