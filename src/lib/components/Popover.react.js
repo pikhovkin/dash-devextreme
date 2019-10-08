@@ -47,6 +47,7 @@ Popover.propTypes = {
     id: PropTypes.string,
 
     animation: PropTypes.object,
+    children: PropTypes.node,
     closeOnBackButton: PropTypes.bool,
     closeOnOutsideClick: PropTypes.oneOfType([PropTypes.bool, PropTypes.func]),
     container: PropTypes.string,
@@ -89,6 +90,7 @@ Popover.propTypes = {
 
 Popover.defaultProps = {
     animation: {show: {type: 'fade', from: 0, to: 1}, hide: {type: 'fade', to: 0}},
+    children: null,
     closeOnBackButton: true,
     closeOnOutsideClick: true,
     // container: undefined,

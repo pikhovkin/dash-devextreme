@@ -21,6 +21,7 @@ export default class Popup extends Component {
 
     render() {
         return <DXPopup
+            children={this.props.children}
             showTitle={this.props.showTitle}
             title={this.props.title}
             visible={this.state.visible}
@@ -36,7 +37,7 @@ Popup.propTypes = {
      * The ID used to identify this compnent in Dash callbacks
      */
     id: PropTypes.string,
-
+    children: PropTypes.node,
     showTitle: PropTypes.bool,
     title: PropTypes.string,
     visible: PropTypes.bool,

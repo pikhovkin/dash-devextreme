@@ -8,6 +8,7 @@ class Popup(Component):
 
 
 Keyword arguments:
+- children (a list of or a singular dash component, string or number; optional)
 - id (string; optional): The ID used to identify this compnent in Dash callbacks
 - showTitle (boolean; optional)
 - title (string; optional)
@@ -18,13 +19,13 @@ Keyword arguments:
 
 Available events: """
     @_explicitize_args
-    def __init__(self, id=Component.UNDEFINED, showTitle=Component.UNDEFINED, title=Component.UNDEFINED, visible=Component.UNDEFINED, dragEnabled=Component.UNDEFINED, closeOnOutsideClick=Component.UNDEFINED, closeOnBackButton=Component.UNDEFINED, **kwargs):
-        self._prop_names = ['id', 'showTitle', 'title', 'visible', 'dragEnabled', 'closeOnOutsideClick', 'closeOnBackButton']
+    def __init__(self, children=None, id=Component.UNDEFINED, showTitle=Component.UNDEFINED, title=Component.UNDEFINED, visible=Component.UNDEFINED, dragEnabled=Component.UNDEFINED, closeOnOutsideClick=Component.UNDEFINED, closeOnBackButton=Component.UNDEFINED, **kwargs):
+        self._prop_names = ['children', 'id', 'showTitle', 'title', 'visible', 'dragEnabled', 'closeOnOutsideClick', 'closeOnBackButton']
         self._type = 'Popup'
         self._namespace = 'dash_devextreme'
         self._valid_wildcard_attributes =            []
         self.available_events = []
-        self.available_properties = ['id', 'showTitle', 'title', 'visible', 'dragEnabled', 'closeOnOutsideClick', 'closeOnBackButton']
+        self.available_properties = ['children', 'id', 'showTitle', 'title', 'visible', 'dragEnabled', 'closeOnOutsideClick', 'closeOnBackButton']
         self.available_wildcard_properties =            []
 
         _explicit_args = kwargs.pop('_explicit_args')
@@ -36,7 +37,7 @@ Available events: """
             if k not in args:
                 raise TypeError(
                     'Required argument `' + k + '` was not specified.')
-        super(Popup, self).__init__(**args)
+        super(Popup, self).__init__(children=children, **args)
 
     def __repr__(self):
         if(any(getattr(self, c, None) is not None

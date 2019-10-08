@@ -2427,6 +2427,17 @@
           "computed": false
         }
       },
+      "children": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
       "closeOnBackButton": {
         "type": {
           "name": "bool"
@@ -2940,6 +2951,13 @@
         },
         "required": false,
         "description": "The ID used to identify this compnent in Dash callbacks"
+      },
+      "children": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": ""
       },
       "showTitle": {
         "type": {
@@ -6106,6 +6124,17 @@
         "description": "",
         "defaultValue": {
           "value": "{show: {type: 'fade', from: 0, to: 1}, hide: {type: 'fade', to: 0}}",
+          "computed": false
+        }
+      },
+      "children": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
           "computed": false
         }
       },
